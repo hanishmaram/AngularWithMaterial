@@ -1,0 +1,23 @@
+<section>
+  <form action="" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f);">
+    <mat-form-field>
+      <input  type="text" placeholder="UserName" name="UserName" ngModel matInput required>
+      <mat-error>
+
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" placeholder="Password" name="Password" ngModel matInput required>
+      <mat-error></mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Birth Date" [matDatepicker]="myDatepicker" [max]="maxDate" ngModel name="dateDOB" required >
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-form-field>
+  
+      <mat-checkbox ngModel name="terms" required>Agree terms and conditions.</mat-checkbox>
+  
+    <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+  </form>
+</section>

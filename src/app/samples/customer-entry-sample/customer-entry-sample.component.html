@@ -1,0 +1,42 @@
+<div>
+  <div>
+    <label>Customer Name:</label>
+    <input type="text" name="" [(ngModel)]="currentCustomer.CustomerName" id="CustomerName"/>
+  </div><br/>
+  <div>
+    <label>Customer Code:</label>
+    <input type="text" name="" [(ngModel)]="currentCustomer.CustomerCode" id="CustomerCode"/>
+  </div><br/>
+  <div>
+    <label>Customer Amount:</label>
+    <input type="text" name="" [(ngModel)]="currentCustomer.CustomerAmount" id="CustomerAmount"/>
+  </div><br/>
+  <div>
+    <button (click)="save()">Save</button>
+    <button (click)="update()">Update</button>
+    <button (click)="cancel()">Cancel</button>
+  </div>
+</div>
+
+<div>
+  <table>
+    <tr>
+      <td>
+        Customer Name
+      </td>
+      <td>
+        Customer Code
+      </td>
+      <td>
+        Customer Amount
+      </td>
+      <td></td>
+    </tr>
+    <tr *ngFor="let cust of customersList">
+        <td>{{cust.CustomerName}}</td>
+        <td>{{cust.CustomerCode}}</td>
+        <td>{{cust.CustomerAmount}}</td>
+        <td><a (click)="select(cust);">select</a></td>
+    </tr>
+  </table>
+</div>
